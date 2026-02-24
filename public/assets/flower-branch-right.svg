@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" fill="none">
+  <!-- Main stem (mirrored) -->
+  <path d="M100 380 Q110 320 115 260 Q122 200 112 140 Q105 80 100 20" stroke="#8B7355" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
+  
+  <!-- Side branches (mirrored) -->
+  <path d="M112 300 Q140 290 160 275" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <path d="M110 240 Q82 225 60 210" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <path d="M113 180 Q142 168 164 155" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <path d="M109 120 Q80 108 58 95" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+  <!-- Leaves -->
+  <ellipse cx="145" cy="278" rx="14" ry="7" fill="#7BA05B" opacity="0.55" transform="rotate(20 145 278)"/>
+  <ellipse cx="65" cy="212" rx="13" ry="6" fill="#7BA05B" opacity="0.55" transform="rotate(-15 65 212)"/>
+  <ellipse cx="152" cy="158" rx="12" ry="6" fill="#7BA05B" opacity="0.55" transform="rotate(25 152 158)"/>
+  <ellipse cx="62" cy="97" rx="13" ry="6" fill="#7BA05B" opacity="0.55" transform="rotate(-10 62 97)"/>
+  <ellipse cx="105" cy="340" rx="10" ry="5" fill="#7BA05B" opacity="0.5" transform="rotate(-5 105 340)"/>
+
+  <!-- Flower 1 - pink rose at top -->
+  <circle cx="100" cy="22" r="14" fill="#F4B8C8" opacity="0.85"/>
+  <circle cx="100" cy="22" r="9" fill="#E896AA" opacity="0.9"/>
+  <circle cx="100" cy="22" r="5" fill="#D4697E" opacity="0.9"/>
+  <ellipse cx="86" cy="18" rx="7" ry="5" fill="#F4B8C8" opacity="0.7" transform="rotate(-30 86 18)"/>
+  <ellipse cx="114" cy="18" rx="7" ry="5" fill="#F4B8C8" opacity="0.7" transform="rotate(30 114 18)"/>
+  <ellipse cx="100" cy="10" rx="6" ry="4" fill="#F4B8C8" opacity="0.7"/>
+  <ellipse cx="100" cy="34" rx="6" ry="4" fill="#F4B8C8" opacity="0.7"/>
+
+  <!-- Flower 2 - at branch tip right -->
+  <circle cx="162" cy="154" r="10" fill="#F2C4A0" opacity="0.8"/>
+  <circle cx="162" cy="154" r="6" fill="#E8A882" opacity="0.9"/>
+  <circle cx="162" cy="154" r="3" fill="#C47050" opacity="0.9"/>
+  <ellipse cx="152" cy="150" rx="5" ry="3.5" fill="#F2C4A0" opacity="0.7" transform="rotate(-25 152 150)"/>
+  <ellipse cx="172" cy="150" rx="5" ry="3.5" fill="#F2C4A0" opacity="0.7" transform="rotate(25 172 150)"/>
+  <ellipse cx="162" cy="144" rx="4" ry="3" fill="#F2C4A0" opacity="0.7"/>
+
+  <!-- Flower 3 - lavender small at left -->
+  <circle cx="57" cy="93" r="9" fill="#D4B8E8" opacity="0.85"/>
+  <circle cx="57" cy="93" r="5" fill="#C0A0D8" opacity="0.9"/>
+  <circle cx="57" cy="93" r="3" fill="#9070B8" opacity="0.9"/>
+  <ellipse cx="48" cy="89" rx="5" ry="3" fill="#D4B8E8" opacity="0.7" transform="rotate(-20 48 89)"/>
+  <ellipse cx="66" cy="89" rx="5" ry="3" fill="#D4B8E8" opacity="0.7" transform="rotate(20 66 89)"/>
+
+  <!-- Buds -->
+  <ellipse cx="158" cy="272" rx="5" ry="8" fill="#F4B8C8" opacity="0.6" transform="rotate(10 158 272)"/>
+  <ellipse cx="60" cy="207" rx="4" ry="7" fill="#D4B8E8" opacity="0.6" transform="rotate(-8 60 207)"/>
+
+  <!-- Tiny flowers -->
+  <circle cx="108" cy="120" r="5" fill="#F4B8C8" opacity="0.75"/>
+  <circle cx="108" cy="120" r="2.5" fill="#E896AA" opacity="0.9"/>
+
+  <!-- Dewdrops -->
+  <circle cx="138" cy="285" r="2" fill="white" opacity="0.5"/>
+  <circle cx="70" cy="100" r="1.5" fill="white" opacity="0.5"/>
+</svg>
