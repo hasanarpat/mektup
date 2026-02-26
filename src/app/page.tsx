@@ -28,7 +28,7 @@ export default function Home() {
           <span className={`script ${styles.logo}`}>Mektup</span>
           <div className={styles.navLinks}>
             <Link href='/letter' className='btn btn-primary' id='nav-write-btn'>
-              ✦ Mektup Yaz
+              ✦ Write a Letter
             </Link>
           </div>
         </div>
@@ -67,13 +67,13 @@ export default function Home() {
 
         <div className={`container ${styles.heroContent}`}>
           <p className={`script animate-fade-up delay-1 ${styles.heroEyebrow}`}>
-            Sözcükler bazen yetmez...
+            Because some things need more than a text...
           </p>
 
           <h1 className={`animate-fade-up delay-2 ${styles.heroTitle}`}>
-            Kalbinden gelen
+            Write a letter
             <br />
-            <em>özür mektubu</em>
+            <em>from the heart</em>
           </h1>
 
           <div
@@ -89,8 +89,9 @@ export default function Home() {
           </div>
 
           <p className={`animate-fade-up delay-3 ${styles.heroSubtitle}`}>
-            Bazen bir özür, bir sarılmadan daha güçlüdür. Duygularını en güzel
-            sözcüklerle, çiçeklerle süslenmiş bir kâğıda dök.
+            Apology, love, gratitude, sympathy — whatever you need to say,
+            say it beautifully. Decorate with flowers, save your letter,
+            and share a private link with the person who matters.
           </p>
 
           <div className={`animate-fade-up delay-4 ${styles.heroCta}`}>
@@ -99,23 +100,56 @@ export default function Home() {
               className='btn btn-primary'
               id='hero-write-btn'
             >
-              ✦ Şimdi Yaz
+              ✦ Start Writing
             </Link>
-            <a href='#nasil' className='btn btn-outline' id='hero-learn-btn'>
-              Nasıl çalışır?
+            <a href='#how-it-works' className='btn btn-outline' id='hero-learn-btn'>
+              How it works
             </a>
           </div>
         </div>
       </section>
 
-      {/* ── HOW IT WORKS ── */}
-      <section id='nasil' className={`section ${styles.howSection}`}>
+      {/* ── LETTER TYPES ── */}
+      <section className={`section ${styles.typesSection}`}>
         <div className='container'>
           <div className={`divider ${styles.sectionDivider}`}>
-            çiçekli adımlar
+            every occasion
           </div>
           <h2 className={`animate-fade-up ${styles.sectionTitle}`}>
-            Üç adımda mektubun hazır
+            A letter for every feeling
+          </h2>
+          <div className={styles.typesGrid}>
+            {[
+              { icon: '🙏', label: 'Apology', desc: 'Say sorry the right way' },
+              { icon: '💌', label: 'Love', desc: 'Pour your heart out' },
+              { icon: '🌸', label: 'Thank You', desc: 'Express real gratitude' },
+              { icon: '🎂', label: 'Birthday', desc: 'Make it unforgettable' },
+              { icon: '🕊️', label: 'Sympathy', desc: 'Comfort with words' },
+              { icon: '✉️', label: 'Pen Pal', desc: 'Keep the tradition alive' },
+            ].map(({ icon, label, desc }) => (
+              <Link
+                key={label}
+                href={`/letter?type=${label.toLowerCase().replace(' ', '-')}`}
+                className={`paper-card ${styles.typeCard}`}
+                id={`type-${label.toLowerCase().replace(' ', '-')}`}
+              >
+                <span className={styles.typeIcon}>{icon}</span>
+                <h3 className={styles.typeLabel}>{label}</h3>
+                <p className={styles.typeDesc}>{desc}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── HOW IT WORKS ── */}
+      <section id='how-it-works' className={`section ${styles.howSection}`}>
+        <div className='container'>
+          <div className={`divider ${styles.sectionDivider}`}>
+            simple steps
+          </div>
+          <h2 className={`animate-fade-up ${styles.sectionTitle}`}>
+            Your letter, ready in minutes
           </h2>
 
           <div className={styles.steps}>
@@ -123,20 +157,20 @@ export default function Home() {
               {
                 icon: '✦',
                 step: '01',
-                title: 'Hissettiklerini yaz',
-                desc: 'Boş kâğıt korkusu yok. Sana yol gösterecek nazik sorularla başla — her sözcük senin.',
+                title: 'Write what you feel',
+                desc: 'No blank-page anxiety. Guided prompts help you find the right words — every one of them yours.',
               },
               {
                 icon: '❀',
                 step: '02',
-                title: 'Çiçeklerle süsle',
-                desc: 'Mektubuna romantik çiçek illüstrasyonları ekle, yerlerini istediğin gibi ayarla.',
+                title: 'Decorate with flowers',
+                desc: 'Add romantic floral illustrations, drag them anywhere on the page, choose your paper theme.',
               },
               {
                 icon: '✉',
                 step: '03',
-                title: 'Paylaş veya yazdır',
-                desc: 'Mektubunu dijital olarak gönder ya da gerçek kâğıda yazdır — seçim sende.',
+                title: 'Share a private link',
+                desc: 'Save your letter and get a unique URL. Your recipient opens a beautiful, private letter — just for them.',
               },
             ].map(({ icon, step, title, desc }) => (
               <div key={step} className={`paper-card ${styles.stepCard}`}>
@@ -153,8 +187,8 @@ export default function Home() {
       {/* ── PREVIEW / SAMPLE LETTER ── */}
       <section className={`section ${styles.previewSection}`}>
         <div className='container'>
-          <div className={`divider ${styles.sectionDivider}`}>örnek mektup</div>
-          <h2 className={`${styles.sectionTitle}`}>Böyle görünüyor</h2>
+          <div className={`divider ${styles.sectionDivider}`}>sample letter</div>
+          <h2 className={`${styles.sectionTitle}`}>This is what it looks like</h2>
 
           <div className={styles.letterPreviewWrap}>
             {/* Flower decorations on corners */}
@@ -176,22 +210,21 @@ export default function Home() {
             </div>
 
             <div className={`letter-paper ${styles.letterPreview}`}>
-              <p className={`script ${styles.letterDate}`}>25 Şubat 2026</p>
-              <p className={`script ${styles.letterGreeting}`}>Sevgili Ayşe,</p>
+              <p className={`script ${styles.letterDate}`}>February 26, 2026</p>
+              <p className={`script ${styles.letterGreeting}`}>Dear Sarah,</p>
               <p className={styles.letterBody}>
-                Dün yaşanan o anı defalarca düşündüm. Sana karşı haksız
-                davrandım ve bunu çok iyi biliyorum. Söylediklerim seni
-                incitmişse — ve kesinlikle incitmiştir — bunun için içtenlikle
-                özür dilerim.
+                I&apos;ve been thinking about what happened and I keep coming back
+                to how careless I was with your feelings. You deserved so much
+                better from me in that moment, and I am truly sorry.
               </p>
               <p className={styles.letterBody}>
-                Senin için önemliyim ve bu ilişkimizi kaybetmek istemiyorum.
-                Umarım bağışlamanın bir yolunu bulabiliriz.
+                You matter to me more than I sometimes show. I hope we can find
+                our way back to each other.
               </p>
               <p className={`script ${styles.letterSign}`}>
-                Sevgiyle,
+                With love,
                 <br />
-                Leyla ✦
+                Jamie ✦
               </p>
             </div>
           </div>
@@ -209,12 +242,12 @@ export default function Home() {
               height={64}
               className={styles.ctaGarland}
             />
-            <h2 className={styles.ctaTitle}>Hazır mısın?</h2>
+            <h2 className={styles.ctaTitle}>Ready to write?</h2>
             <p className={styles.ctaDesc}>
-              Belki tek bir mektup her şeyi değiştirir.
+              Sometimes, one letter changes everything.
             </p>
             <Link href='/letter' className='btn btn-primary' id='cta-write-btn'>
-              ✦ Mektubumu Yaz
+              ✦ Write My Letter
             </Link>
           </div>
         </div>
@@ -224,7 +257,7 @@ export default function Home() {
       <footer className={styles.footer}>
         <p className={`script ${styles.footerScript}`}>Mektup</p>
         <p className={styles.footerTagline}>
-          Sözcüklerle iyileştir · Çiçeklerle süsle
+          Heal with words · Bloom with flowers
         </p>
       </footer>
     </main>

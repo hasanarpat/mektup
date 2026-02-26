@@ -1,0 +1,248 @@
+/* ────────────────────────────
+   PUBLIC LETTER VIEW PAGE
+──────────────────────────── */
+
+.main {
+    min-height: 100vh;
+    background: var(--paper);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ── Floating petals ── */
+.petals {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.petal {
+    position: absolute;
+    top: -20px;
+    border-radius: 50% 0 50% 0;
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(135deg, #f4b8c8 0%, #c9a8d4 100%);
+    opacity: 0;
+    animation: petalDrift linear infinite;
+}
+
+@keyframes petalDrift {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 0.5;
+    }
+
+    90% {
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translateY(105vh) translateX(60px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ── Wrapper ── */
+.wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+}
+
+/* ── Logo ── */
+.logoRow {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.logo {
+    font-size: 2.2rem;
+    color: var(--rose);
+    text-decoration: none;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+}
+
+.logo:hover {
+    opacity: 1;
+}
+
+/* ── For label ── */
+.forLabel {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: fadeUp 0.8s ease both;
+}
+
+.forIcon {
+    font-size: 2rem;
+}
+
+.forText {
+    font-size: 1.6rem;
+    color: var(--ink-soft);
+}
+
+.forText em {
+    font-style: italic;
+    color: var(--rose);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Envelope Scene ── */
+.envelopeScene {
+    position: relative;
+    animation: letterReveal 0.9s cubic-bezier(0.34, 1.15, 0.64, 1) 0.3s both;
+}
+
+@keyframes letterReveal {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.flowerLeft {
+    position: absolute;
+    left: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.flowerRight {
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+
+    .flowerLeft,
+    .flowerRight {
+        display: none;
+    }
+}
+
+/* ── Letter Paper ── */
+.letterPaper {
+    position: relative;
+    padding: 3.5rem 3.5rem 3rem;
+    border-radius: var(--radius-md);
+    box-shadow:
+        var(--shadow-paper),
+        0 24px 80px rgba(44, 36, 22, 0.1),
+        inset 0 0 60px rgba(196, 162, 103, 0.05);
+    overflow: hidden;
+    min-height: 500px;
+}
+
+@media (max-width: 600px) {
+    .letterPaper {
+        padding: 2.5rem 1.75rem;
+    }
+}
+
+.dateText {
+    font-size: 0.95rem;
+    color: var(--ink-muted);
+    text-align: right;
+    margin-bottom: 1.5rem;
+}
+
+.greetingText {
+    font-size: 1.6rem;
+    color: var(--rose);
+    margin-bottom: 1.25rem;
+}
+
+.letterBody {
+    margin: 1rem 0 1.5rem;
+}
+
+.bodyLine {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 2;
+    margin-bottom: 0.3rem;
+}
+
+.signText {
+    font-size: 1.3rem;
+    color: var(--rose);
+    text-align: right;
+    margin-top: 1.5rem;
+}
+
+/* ── CTA Footer ── */
+.ctaFooter {
+    text-align: center;
+    margin-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    animation: fadeUp 0.7s ease 1.2s both;
+}
+
+.dividerLine {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--rose-light), transparent);
+}
+
+.ctaText {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-muted);
+}
+
+.poweredBy {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    margin-top: 0.5rem;
+}
+
+.poweredLink {
+    color: var(--rose);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.poweredLink:hover {
+    text-decoration: underline;
+}
